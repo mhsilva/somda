@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+<h:head></h:head>
+<h:body>
+	<p:panelGrid style="margin-top:20px">
+		<p:row>
+			<p:column>
+				<p:panel header="Basic Dimensions">
+					<p:panel header="Speakers [m]">
+						<b:inputText id="Lfx" placeholder="Lfx" />
+						<b:inputText id="Lfy" placeholder="Lfy" />
+						<b:inputText id="Lfz" placeholder="Lfz" />
+					</p:panel>
+					<p:panel header="Room [m]">
+						<h:panelGrid columns="3">
+							<b:inputText id="roomLxLimit" placeholder="roomLxLimit"
+								disabled="true" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="roomLx" placeholder="roomLx" disabled="false" />
+
+							<b:inputText id="roomLyLimit" placeholder="roomLyLimit"
+								disabled="true" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="roomLy" placeholder="roomLy" disabled="false" />
+
+							<b:inputText id="roomLzLimit" placeholder="roomLzLimit"
+								disabled="true" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="roomLz" placeholder="roomLz" disabled="false" />
+						</h:panelGrid>
+					</p:panel>
+				</p:panel>
+			</p:column>
+			<p:column>
+				<p:panel header="Positioning limits">
+					<p:panel header="Listeners [m]">
+						<h:panelGrid columns="7">
+							<h:outputText />
+							<h:outputText />
+							<h:outputText value="Min" />
+							<h4>&#160;≤&#160;</h4>
+							<h:outputText value="Max" />
+							<h:outputText />
+							<h:outputText />
+							<b:inputText id="listenersMinYo" disabled="true"
+								placeholder="MinYo" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="listenersMinMediumYo" placeholder="MinMediumYo" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="listenersMediumMaxYo" placeholder="MediumMaxYo" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="listenersMaxYo" disabled="true"
+								placeholder="MaxYo" />
+							<b:inputText id="minZo" disabled="true" placeholder="MinZo" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="mediumZo" placeholder="MediumZo" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="maxZo" disabled="true" placeholder="MaxZo" />
+							<h:outputText />
+							<h:outputText />
+							<h:outputText />
+							<h:outputText />
+							<b:inputText id="minLo" placeholder="MinLo" />
+							<h4>&#160;≤&#160;</h4>
+							<b:inputText id="maxLo" disabled="true" placeholder="MaxLo" />
+						</h:panelGrid>
+					</p:panel>
+					<p:panel header="Speakers [m]">
+					</p:panel>
+				</p:panel>
+			</p:column>
+			<p:column>
+				<p:panel header="Reverberation Time">
+					<h:panelGrid columns="1">
+						<b:inputText id="trOptimumMusic" disabled="true"
+							placeholder="TROptimumMusic" />
+						<b:inputText id="trAdopted" placeholder="TRAdopted" />
+						<b:inputText id="trOptimumSpeak" disabled="true"
+							placeholder="TROptimumSpeak" />
+						<h:inputTextarea rows="17" disabled="true"
+							value="Adopt reverberation time for speech if only this type of media is being played (documentaries, movies...). Adopt reverberation time for music if only this type of media is being played. Multiuse rooms might, ideally, present intermediate values. Values outside of this range may cause low acustic quality." />
+					</h:panelGrid>
+				</p:panel>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</h:body>
+</html>

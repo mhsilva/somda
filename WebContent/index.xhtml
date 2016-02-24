@@ -1,0 +1,53 @@
+<f:view id="ajaxEcho" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<h:outputStylesheet library="css" name="styles.css" />
+	</h:head>
+	<h:body>
+		<h:form prependId="false">
+			<div class="login-table">
+				<b:panel title="Login - SOMDA" columns="1">
+					<b:row>
+						<b:column>
+							<h:outputText id="out" value="#{userController.status}" />
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:inputText id="user" value="#{userController.userName}"
+								placeholder="Username">
+								<f:facet name="prepend">
+									<b:icon name="user" />
+								</f:facet>
+							</b:inputText>
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:inputSecret id="pass" value="#{userController.password}"
+								placeholder="Password">
+								<f:facet name="prepend">
+									<b:icon name="lock" />
+								</f:facet>
+							</b:inputSecret>
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:commandButton id="login" value="Login"
+								action="#{userController.login}" look="primary">
+								<f:ajax render="out" />
+							</b:commandButton>
+						</b:column>
+						<b:column>
+							<h:link value="Sign in." outcome="signIn" />
+						</b:column>
+					</b:row>
+				</b:panel>
+			</div>
+		</h:form>
+	</h:body>
+</f:view>

@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+div.login-table {
+	margin-top: 15%;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+.mainFormColumns {
+	border: none;
+}
+.mainFormField {
+	size: 10px;
+}

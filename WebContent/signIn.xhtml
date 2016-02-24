@@ -1,0 +1,67 @@
+<f:view id="ajaxEcho" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<h:outputStylesheet library="css" name="styles.css" />
+	</h:head>
+	<h:body>
+		<h:form prependId="false">
+			<div class="login-table">
+				<b:panel title="Create User" columns="1">
+					<b:row>
+						<b:column>
+							<h:outputText id="out" value="#{userController.status}" />
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:inputText id="user" value="#{userController.name}"
+								placeholder="Name">Name</b:inputText>
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:inputText id="userName" value="#{userController.userName}"
+								placeholder="Username">Username
+								<f:ajax event="blur" listener="#{userController.checkUserName}"
+									render="out sign" />
+							</b:inputText>
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:inputSecret id="pass" value="#{userController.password}"
+								placeholder="Password">Password
+								<f:ajax event="blur" listener="#{userController.checkPassword}"
+									render="out sign" />
+							</b:inputSecret>
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:inputSecret id="confirmPass"
+								value="#{userController.confirmPass}"
+								placeholder="Confirm Password">Confirm Password
+								<f:ajax event="blur" listener="#{userController.checkPassword}"
+									render="out sign" />
+							</b:inputSecret>
+						</b:column>
+					</b:row>
+					<b:row>
+						<b:column>
+							<b:commandButton id="sign" value="Sign In"
+								action="#{userController.signOn}"
+								disabled="#{userController.buttonDisabled}" look="primary"
+								title="Sign In" />
+						</b:column>
+						<b:column>
+							<h:link value="Back." outcome="index" />
+						</b:column>
+					</b:row>
+				</b:panel>
+			</div>
+		</h:form>
+	</h:body>
+</f:view>
